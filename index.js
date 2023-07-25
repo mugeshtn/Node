@@ -78,7 +78,7 @@ readable.on("data", (chunk)=>{
    });
    server.listen(80, ()=>{
     console.log("server on 3000");
-   })
+   });
 
 
         //for JSON files
@@ -118,3 +118,21 @@ http.createServer((req, res) =>{
      res.end(html);
 }).listen(80);
 
+         //Routing
+
+ http.createServer((req, res) =>{
+    if(req.url === "/") {
+        res.writeHead(200, {"Content-Type":"text/plain"});
+        res.end("Home page")
+    }else if(req.url ==="/about"){
+        res.writeHead(200, {"Content-Type":"text/plain"});
+        res.end("About page")
+    }else if(req.url === "/api"){
+        const data = {Name : "Mugesh TN"}
+        res.writeHead(200, {"Content-Type":"application/json"});
+        res.end(JSON.stringify(data));
+    }else {
+        res.writeHead(404);
+        res.end("page not found");
+    }
+ }).listen(80);        
