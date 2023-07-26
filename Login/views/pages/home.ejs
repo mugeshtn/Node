@@ -1,0 +1,30 @@
+<%- include('../partials/head', {title: "Home"}) %>
+
+<style>
+  
+</style>
+
+  <body>
+    <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh">
+       <h3> Hi, you've logged in</h3>
+       <button id="logoutButton" 
+      type="button" class="btn btn-danger">Log out</button>
+    </div>
+  </body>
+
+  <script>
+    const logoutButton = document.querySelector('#logoutButton');
+
+logoutButton.addEventListener('click', () => {
+  fetch('/logout', {
+    method: 'POST',
+  }).then((res) => {
+    if(res.status === 200) {
+        console.log(res.status);
+        window.location.href = "http://localhost:8080/";
+    }
+})
+});
+
+  </script>
+</html>
