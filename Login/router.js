@@ -19,9 +19,9 @@ router.post("/submit", (req, res) => {
 
 router.post("/check", (req, res) => {
   if(req.session.user) {
-    res.send(true);
+    res.send("Welcome user");
   } else {
-    res.send(false);
+    res.send("Not logged in");
   }
 })
 

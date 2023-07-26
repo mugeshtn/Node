@@ -1,12 +1,20 @@
 <%- include('../partials/head', {title: "Home"}) %>
 
 <style>
-  
+  body{
+    background-image: url("https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2Vic2l0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&w=1000&q=80"), linear-gradient(to right top, #343a40, #2b2c31, #211f22, #151314, #000000);
+    background-repeat: no-repeat ;
+    background-size: cover;
+  }
+  #logoutButton{
+    margin-top: 10px;
+  }
 </style>
 
   <body>
     <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh">
-       <h3> Hi, you've logged in</h3>
+       <h1> Hi!!!</h1>
+       <h3>Logged in successfully!!!</h3>
        <button id="logoutButton" 
       type="button" class="btn btn-danger">Log out</button>
     </div>

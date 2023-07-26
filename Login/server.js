@@ -1,21 +1,21 @@
 const express = require("express");
-const session = require("express-session");
-const { v4: uuidv4 } = require("uuid");
+const session = require("express-session");//to create session to store session values.
+const { v4: uuidv4 } = require("uuid"); //returns object
 const path = require("path");
 
 const router = require("./router");
 
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); //parse req.body value
 
-app.set("view engine", "ejs");
+app.set("view engine", "ejs"); //using ejs view engine
 
-app.use('/assets', express.static(path.join(__dirname, '/assets')))
+app.use('/assets', express.static(path.join(__dirname, '/assets'))) //add static items such as css codes.
 
 app.use(
   session({
-    secret: uuidv4(), 
+    secret: uuidv4(), //universally unique identifier;
     resave: false,
     saveUninitialized: true,
   })
@@ -54,5 +54,5 @@ app.post("/logout", (req, res) => {
 
 
 app.listen(3000, function () {
-  console.log("server is running on port 8080");
+  console.log("server is running on  http://localhost:3000");
 });
