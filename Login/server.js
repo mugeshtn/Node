@@ -13,7 +13,7 @@ app.set("view engine", "ejs"); //using ejs view engine
 
 app.use('/assets', express.static(path.join(__dirname, '/assets'))) //add static items such as css codes.
 
-app.use(
+app.use( //app level midd
   session({
     secret: uuidv4(), //universally unique identifier;
     resave: false,
@@ -53,6 +53,6 @@ app.post("/logout", (req, res) => {
 
 
 
-app.listen(3000, function () {
-  console.log("server is running on  http://localhost:3000");
+app.listen(8080, function () {
+  console.log("server is running on  http://localhost:8080");
 });
